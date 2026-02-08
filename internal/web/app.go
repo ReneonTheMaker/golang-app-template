@@ -38,6 +38,9 @@ func NewApp() *App {
 	// Create the hits store
 	hitStore := store.NewHitsStore()
 
+	// Middleware to set ID cookie
+	RegisterMiddleware(app)
+
 	// Register Routes - defined in routes.go
 	RegisterRoutes(app, hitStore)
 	
